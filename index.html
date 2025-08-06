@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tic-Tac-Toe Arena</title>
+    <link rel="stylesheet" href="tictactoe-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="game-container">
+        <div class="header">
+            <h1 class="game-title">
+                <i class="fas fa-fire"></i>
+                TIC-TAC-TOE ARENA
+                <i class="fas fa-fire"></i>
+            </h1>
+            <div class="battle-status" id="battleStatus">Choose Your Opponent!</div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item player-stat">
+                <div class="stat-icon">👤</div>
+                <div class="stat-info">
+                    <div class="stat-label">Player</div>
+                    <div class="stat-value" id="playerWins">0</div>
+                </div>
+            </div>
+            
+            <div class="stat-item streak-stat">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <div class="stat-label">Streak</div>
+                    <div class="stat-value" id="streak">0</div>
+                </div>
+            </div>
+            
+            <div class="stat-item bot-stat">
+                <div class="stat-icon">🤖</div>
+                <div class="stat-info">
+                    <div class="stat-label">AI Overlord</div>
+                    <div class="stat-value" id="botWins">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mode-selection">
+            <button class="mode-btn human-mode active" id="humanMode">
+                <i class="fas fa-users"></i>
+                <span>Human vs Human</span>
+                <div class="mode-desc">Battle your friend!</div>
+            </button>
+            
+            <button class="mode-btn easy-mode" id="easyMode">
+                <i class="fas fa-smile"></i>
+                <span>Easy AI</span>
+                <div class="mode-desc">For beginners</div>
+            </button>
+            
+            <button class="mode-btn hard-mode" id="hardMode">
+                <i class="fas fa-skull"></i>
+                <span>DEMON AI</span>
+                <div class="mode-desc">Pure Evil!</div>
+            </button>
+            
+            <button class="mode-btn impossible-mode" id="impossibleMode">
+                <i class="fas fa-fire"></i>
+                <span>IMPOSSIBLE</span>
+                <div class="mode-desc">You will lose!</div>
+            </button>
+        </div>
+
+        <div class="game-board">
+            <div class="board-container">
+                <div class="board" id="board">
+                    <div class="cell" data-cell="0"></div>
+                    <div class="cell" data-cell="1"></div>
+                    <div class="cell" data-cell="2"></div>
+                    <div class="cell" data-cell="3"></div>
+                    <div class="cell" data-cell="4"></div>
+                    <div class="cell" data-cell="5"></div>
+                    <div class="cell" data-cell="6"></div>
+                    <div class="cell" data-cell="7"></div>
+                    <div class="cell" data-cell="8"></div>
+                </div>
+                
+                <div class="winning-line" id="winningLine"></div>
+                
+                <div class="game-overlay" id="gameOverlay">
+                    <div class="overlay-content">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <div class="result-text" id="resultText"></div>
+                        <div class="result-subtext" id="resultSubtext"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="current-player">
+            <div class="player-indicator" id="playerIndicator">
+                <div class="player-avatar" id="currentAvatar">X</div>
+                <div class="player-name" id="currentPlayerName">Player 1's Turn</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn reset-btn" id="resetBtn">
+                <i class="fas fa-redo"></i>
+                New Game
+            </button>
+            
+            <button class="control-btn hint-btn" id="hintBtn" style="display: none;">
+                <i class="fas fa-lightbulb"></i>
+                Hint
+            </button>
+            
+            <button class="control-btn taunt-btn" id="tauntBtn" style="display: none;">
+                <i class="fas fa-comment"></i>
+                Taunt AI
+            </button>
+        </div>
+
+        <div class="ai-chat" id="aiChat">
+            <div class="chat-bubble" id="chatBubble"></div>
+        </div>
+    </div>
+
+    <!-- Victory/Defeat Effects -->
+    <div class="fireworks" id="fireworks"></div>
+    <div class="screen-shake" id="screenShake"></div>
+
+    <script src="tictactoe-script.js"></script>
+</body>
+</html>
